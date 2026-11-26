@@ -194,8 +194,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <button class="logo" onclick="show('home')" aria-label="Inicio"><span class="mark"><i></i></span>RemarBy</button>
     <nav>
-      <button id="nav-home" class="on" onclick="show('home')">Auditar</button>
-      <button id="nav-hist" onclick="show('hist')">Mis auditorías<span class="count" id="histCount">0</span></button>
+      <button id="nav-home" class="on" onclick="show('home')">Revisar</button>
+      <button id="nav-hist" onclick="show('hist')">Mis reportes<span class="count" id="histCount">0</span></button>
     </nav>
   </div>
 </header>
@@ -206,14 +206,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <div class="hero">
       <div>
-        <span class="eyebrow">Para vendedores de agencias en Loja</span>
-        <h1>Sabe qué le falta a un negocio <em>antes de visitarlo</em></h1>
-        <p class="lead">Escribe el nombre del local. RemarBy revisa su ficha de Google, su página web, sus reseñas y sus redes, y te dice qué ofrecerle.</p>
+        <span class="eyebrow">Para negocios locales de Loja</span>
+        <h1>Descubre qué le falta a <em>tu negocio</em> en internet</h1>
+        <p class="lead">Escribe el nombre de tu local. RemarBy revisa tu ficha de Google, tu página web, tus reseñas y tus redes. Te dice qué te falta y te ayudamos a arreglarlo.</p>
         <div class="searchbox">
           <form class="search" onsubmit="event.preventDefault();searchSubmit()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8a93a6" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
-            <input id="q" autocomplete="off" placeholder="Ej.: Panadería La Huerta" oninput="suggest()" onkeydown="suggKey(event)" aria-label="Nombre del negocio">
-            <button class="btn" type="submit">Auditar</button>
+            <input id="q" autocomplete="off" placeholder="Busca tu negocio" oninput="suggest()" onkeydown="suggKey(event)" aria-label="Nombre del negocio">
+            <button class="btn" type="submit">Revisar</button>
           </form>
           <div class="sugg" id="sugg" role="listbox"></div>
         </div>
@@ -222,7 +222,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <button class="chip" onclick="audit('ferreteria-el-tornillo')">Ferretería El Tornillo</button>
           <button class="chip" onclick="audit('cafe-vilcabamba')">Café Vilcabamba</button>
         </div>
-        <div class="manual-link">¿El negocio no aparece? <button onclick="show('manual')">Audítalo con tus propios datos</button></div>
+        <div class="manual-link">¿Tu negocio no aparece? <button onclick="show('manual')">Responde unas preguntas y te damos tu reporte</button></div>
       </div>
       <div class="preview" aria-hidden="true">
         <div class="big"><b>46</b><span>de 100 · Panadería La Huerta</span></div>
@@ -233,9 +233,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       </div>
     </div>
     <div class="how">
-      <div><b>1</b><h3>Busca el negocio</h3><p>Por nombre o por tipo de local. Si no está, ingresas sus datos en un minuto.</p></div>
-      <div><b>2</b><h3>Mira lo que le falta</h3><p>Un puntaje de 0 a 100 y cada problema separado por Google, página web, reseñas y redes.</p></div>
-      <div><b>3</b><h3>Contáctalo con la propuesta</h3><p>Un botón arma el mensaje con lo que encontraste y lo envía por WhatsApp.</p></div>
+      <div><b>1</b><h3>Busca tu negocio</h3><p>Por nombre o por tipo de local. Si no aparece, respondes unas preguntas en un minuto.</p></div>
+      <div><b>2</b><h3>Mira lo que te falta</h3><p>Un puntaje de 0 a 100 y cada problema separado por Google Maps, página web, reseñas y redes.</p></div>
+      <div><b>3</b><h3>Te ayudamos a arreglarlo</h3><p>Un botón nos escribe por WhatsApp con tu reporte. Te respondemos con una propuesta.</p></div>
     </div>
   </div>
 </section>
@@ -245,7 +245,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <div class="scan">
       <h2 id="scanName">Negocio</h2>
-      <div class="sub">Revisando su presencia en internet.</div>
+      <div class="sub">Revisando cómo aparece en internet.</div>
       <div class="bar"><i id="scanBar"></i></div>
       <div class="steps" id="scanSteps"></div>
     </div>
@@ -258,8 +258,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="rtop">
       <button class="back" onclick="show('home')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Nueva búsqueda</button>
       <div class="racts">
-        <button class="btn ghost sm" onclick="copyProposal()">Copiar propuesta</button>
-        <button class="btn ghost sm" onclick="window.print()">Exportar a PDF</button>
+        <button class="btn ghost sm" onclick="window.print()">Descargar mi reporte</button>
       </div>
     </div>
     <div class="summary">
@@ -271,19 +270,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="pills" id="rPills"></div>
       </div>
       <div class="oppo">
-        <small>Qué venderle primero</small>
+        <small>Lo primero que te recomendamos</small>
         <b id="rFirst"></b>
         <span id="rFirstWhy"></span>
       </div>
     </div>
     <div class="sections" id="rSections"></div>
     <div class="contact">
-      <div><b>¿Listo para ofrecerle una mejora?</b><span id="contactLine">Enviamos el resumen del reporte al negocio por WhatsApp.</span></div>
+      <div><b>¿Te ayudamos a arreglarlo?</b><span id="contactLine">Escríbenos por WhatsApp. Te enviamos una propuesta sin costo.</span></div>
       <div class="btns">
-        <button class="btn ghost sm" onclick="markContacted()" id="markBtn">Marcar como contactado</button>
-        <a class="btn lime" id="waBtn" target="_blank" rel="noopener">
+                <a class="btn lime" id="waBtn" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.3.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></svg>
-          Contactar al negocio
+          Quiero que me ayuden
         </a>
       </div>
     </div>
@@ -294,43 +292,43 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <section class="view" id="v-manual">
   <div class="wrap">
     <form class="formcard" onsubmit="event.preventDefault();manualSubmit()">
-      <h2>Auditar un negocio nuevo</h2>
-      <p>Llena lo que viste del negocio en Google Maps, su web y sus redes. RemarBy calcula el puntaje y arma el reporte.</p>
+      <h2>Revisa tu negocio</h2>
+      <p>Responde lo que sabes de tu negocio en Google Maps, tu página web y tus redes. RemarBy calcula tu puntaje y arma tu reporte.</p>
       <fieldset>
-        <legend>El negocio</legend>
+        <legend>Tu negocio</legend>
         <label>Nombre<input type="text" id="m-name" required placeholder="Ej.: Pizzería Don Luis"></label>
         <label>Tipo de local<select id="m-cat"><option>Restaurante</option><option>Panadería</option><option>Cafetería</option><option>Ferretería</option><option>Óptica</option><option>Farmacia</option><option>Tienda de ropa</option><option>Otro</option></select></label>
         <label>Barrio o sector<input type="text" id="m-zone" placeholder="Ej.: El Valle"></label>
-        <label>WhatsApp del negocio (opcional)<input type="tel" id="m-phone" placeholder="Ej.: 0991234567"></label>
+        <label>Tu WhatsApp (opcional)<input type="tel" id="m-phone" placeholder="Ej.: 0991234567"></label>
       </fieldset>
       <fieldset>
         <legend>Google Maps</legend>
-        <label class="check"><input type="checkbox" id="m-gmb" checked>Tiene ficha en Google Maps</label>
-        <label class="check"><input type="checkbox" id="m-hours">Horario actualizado</label>
-        <label class="check"><input type="checkbox" id="m-phoneok">Teléfono publicado</label>
-        <label>Fotos subidas por el dueño<input type="number" id="m-photos" min="0" value="3"></label>
+        <label class="check"><input type="checkbox" id="m-gmb" checked>Mi negocio aparece en Google Maps</label>
+        <label class="check"><input type="checkbox" id="m-hours">El horario está actualizado</label>
+        <label class="check"><input type="checkbox" id="m-phoneok">Mi teléfono está publicado</label>
+        <label>Fotos que yo subí<input type="number" id="m-photos" min="0" value="3"></label>
       </fieldset>
       <fieldset>
         <legend>Página web</legend>
-        <label class="check"><input type="checkbox" id="m-web">Tiene página web propia</label>
+        <label class="check"><input type="checkbox" id="m-web">Tengo página web propia</label>
         <label class="check"><input type="checkbox" id="m-webmobile">Se ve bien en el celular</label>
-        <label class="check"><input type="checkbox" id="m-webinfo">Muestra precios o catálogo</label>
+        <label class="check"><input type="checkbox" id="m-webinfo">Muestra mis precios o mi catálogo</label>
       </fieldset>
       <fieldset>
         <legend>Reseñas</legend>
-        <label>Número de reseñas<input type="number" id="m-reviews" min="0" value="20"></label>
-        <label>Reseñas sin responder<input type="number" id="m-unanswered" min="0" value="10"></label>
-        <label>Calificación promedio<input type="number" id="m-rating" min="1" max="5" step="0.1" value="4.2"></label>
+        <label>Cuántas reseñas tengo<input type="number" id="m-reviews" min="0" value="20"></label>
+        <label>Cuántas no he respondido<input type="number" id="m-unanswered" min="0" value="10"></label>
+        <label>Mi calificación<input type="number" id="m-rating" min="1" max="5" step="0.1" value="4.2"></label>
       </fieldset>
       <fieldset>
         <legend>Redes sociales</legend>
-        <label>Días desde la última publicación en Facebook<input type="number" id="m-fb" min="0" value="30"></label>
-        <label>Días desde la última publicación en Instagram (vacío si no tiene)<input type="number" id="m-ig" min="0"></label>
-        <label class="check full"><input type="checkbox" id="m-reply">Responde mensajes el mismo día</label>
+        <label>Hace cuántos días publiqué en Facebook<input type="number" id="m-fb" min="0" value="30"></label>
+        <label>Hace cuántos días publiqué en Instagram (vacío si no tengo)<input type="number" id="m-ig" min="0"></label>
+        <label class="check full"><input type="checkbox" id="m-reply">Respondo los mensajes el mismo día</label>
       </fieldset>
       <div class="formfoot">
         <button type="button" class="btn ghost" onclick="show('home')">Cancelar</button>
-        <button class="btn" type="submit">Generar reporte</button>
+        <button class="btn" type="submit">Ver mi reporte</button>
       </div>
     </form>
   </div>
@@ -339,14 +337,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <!-- HISTORIAL -->
 <section class="view" id="v-hist">
   <div class="wrap hist">
-    <h2>Mis auditorías</h2>
-    <p>Los negocios que revisaste y si ya los contactaste.</p>
+    <h2>Mis reportes</h2>
+    <p>Los negocios que revisaste y si ya nos pediste ayuda.</p>
     <div class="table" id="histTable"></div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap"><span>RemarBy · Auditor de presencia digital para negocios locales de Loja</span><span>MVP v1 · EBT II · UTPL</span></div></footer>
+<footer><div class="wrap"><span>RemarBy · Auditor de presencia digital para negocios locales de Loja</span><span>MVP v1</span></div></footer>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -398,7 +396,7 @@ function auditBusiness(b){
     const rp=pct<=.2?15:pct<=.5?7:0;
     add('reviews',rp===15?'o':rp?'w':'c',b.unanswered+' de '+b.reviews+' reseñas sin responder',rp===15?'El dueño contesta a sus clientes.':'Las quejas se quedan sin respuesta a la vista de todos.',rp===15?'—':'Gestión mensual de reseñas y respuestas.',rp,15);
     const rt=b.rating>=4.5?15:b.rating>=4?10:4;
-    add('reviews',rt===15?'o':rt===10?'w':'c','Calificación '+String(b.rating).replace('.',','),rt===15?'Mejor que la mayoría de su sector.':rt===10?'Aceptable, pero hay margen para subir.':'Por debajo de lo que buscan los clientes.',rt===15?'Usarla como argumento en la propuesta.':'Plan para pedir reseñas a clientes contentos.',rt,15);
+    add('reviews',rt===15?'o':rt===10?'w':'c','Calificación '+String(b.rating).replace('.',','),rt===15?'Mejor que la mayoría de su sector.':rt===10?'Aceptable, pero hay margen para subir.':'Por debajo de lo que buscan los clientes.',rt===15?'Usarla a tu favor en tus redes.':'Plan para pedir reseñas a tus clientes contentos.',rt,15);
   }
   // Redes (20)
   const fbp=b.fb<=14?8:b.fb<=60?4:0;
@@ -488,53 +486,51 @@ function renderReport(b){
   let n=0; const tgt=r.score; ring.style.setProperty('--p',0);
   const t=setInterval(()=>{n=Math.min(tgt,n+2);document.getElementById('scoreN').textContent=n;ring.style.setProperty('--p',n);if(n>=tgt)clearInterval(t)},16);
   document.getElementById('rName').textContent=b.name;
-  document.getElementById('rMeta').textContent=b.cat+' · '+b.zone+' · revisado el '+new Date().toLocaleDateString('es-EC',{day:'numeric',month:'long',year:'numeric'})+(b.manual?' · datos ingresados por el vendedor':'');
-  document.getElementById('rVerdict').textContent=r.score>=75?'Está bien en internet. Hay detalles que pulir, pero no es el cliente más urgente.':r.score>=50?'Existe en internet pero lo encuentran mal o responde tarde. Es un buen cliente para ofrecerle mejoras.':'Casi no se le encuentra en internet. Está perdiendo clientes cada semana y necesita ayuda ya.';
+  document.getElementById('rMeta').textContent=b.cat+' · '+b.zone+' · revisado el '+new Date().toLocaleDateString('es-EC',{day:'numeric',month:'long',year:'numeric'})+(b.manual?' · con los datos que ingresaste':'');
+  document.getElementById('rVerdict').textContent=r.score>=75?'Tu negocio está bien en internet. Hay detalles que pulir para no quedarte atrás.':r.score>=50?'Tu negocio aparece, pero los clientes te encuentran mal o les respondes tarde. Con unos ajustes puedes ganar más clientes.':'Casi no te encuentran en internet. Estás perdiendo clientes cada semana, pero tiene arreglo.';
   document.getElementById('rPills').innerHTML=`<span class="pill c">${r.crit.length} urgentes</span><span class="pill w">${r.warn.length} a mejorar</span><span class="pill o">${r.ok.length} en orden</span>`;
   document.getElementById('rFirst').textContent=r.first?r.first.fix.replace(/\.$/,''):'Mantenimiento';
-  document.getElementById('rFirstWhy').textContent=r.first?r.first.title:'Todo en orden: ofrécele mantener lo que ya tiene.';
+  document.getElementById('rFirstWhy').textContent=r.first?r.first.title:'Todo en orden. Te ayudamos a mantenerlo así.';
   document.querySelector('.oppo b').style.fontSize=(r.first&&r.first.fix.length>30)?'19px':'30px';
   document.getElementById('rSections').innerHTML=Object.entries(r.S).map(([k,items])=>{
     const pts=items.reduce((a,i)=>a+i.pts,0), max=items.reduce((a,i)=>a+i.max,0), p=pts/max;
     const cls=p>=.75?'o':p>=.4?'w':'c';
     const order={c:0,w:1,o:2};
     return `<article class="sec"><div class="sech"><span class="ico">${SECS[k][1]}</span><h2>${SECS[k][0]}</h2><span class="sc ${cls}">${pts}/${max}</span></div>
-      ${items.slice().sort((a,b)=>order[a.lv]-order[b.lv]).map(i=>`<div class="item"><span class="lv ${i.lv}"></span><div><h3>${i.title}</h3><p>${i.desc}</p>${i.fix!=='—'?`<div class="fix"><b>Qué ofrecerle:</b> ${i.fix}</div>`:''}</div></div>`).join('')}
+      ${items.slice().sort((a,b)=>order[a.lv]-order[b.lv]).map(i=>`<div class="item"><span class="lv ${i.lv}"></span><div><h3>${i.title}</h3><p>${i.desc}</p>${i.fix!=='—'?`<div class="fix"><b>Cómo te ayudamos:</b> ${i.fix}</div>`:''}</div></div>`).join('')}
     </article>`}).join('');
-  const msg=proposal();
-  document.getElementById('waBtn').href='https://wa.me/'+(b.phone?('593'+b.phone.replace(/^0/,'')):'')+'?text='+encodeURIComponent(msg);
-  document.getElementById('contactLine').textContent=b.phone?'Le enviamos el resumen al '+b.phone+' por WhatsApp.':'Arma el mensaje con el resumen y elige a quién enviarlo por WhatsApp.';
+  document.getElementById('waBtn').href='https://wa.me/'+REMARBY_PHONE+'?text='+encodeURIComponent(proposal());
+  document.getElementById('waBtn').onclick=markContacted;
   saveAudit(b,r);
-  const h=store.get().find(x=>x.name===b.name);
-  document.getElementById('markBtn').textContent=h&&h.contacted?'Contactado ✓':'Marcar como contactado';
   show('report');
 }
+const REMARBY_PHONE=''; // WhatsApp de RemarBy, formato 5939XXXXXXXX
 function proposal(){
   const {b,r}=current; const top=r.crit.concat(r.warn).slice(0,3);
-  return `Hola, ${b.name}. Soy de una agencia de marketing de Loja. Revisamos cómo aparece su negocio en internet y obtuvo ${r.score} de 100.\n\n`+
-    (top.length?'Lo más importante para mejorar:\n'+top.map(i=>'• '+i.title+': '+i.fix.toLowerCase()).join('\n')+'\n\n':'')+
-    '¿Le gustaría que le mostremos el reporte completo? Es gratis y toma 10 minutos.';
+  return `Hola, RemarBy. Soy de ${b.name} (${b.cat}, ${b.zone}). Revisé mi negocio en su página y saqué ${r.score} de 100.\n\n`+
+    (top.length?'Me gustaría ayuda con:\n'+top.map(i=>'• '+i.title).join('\n')+'\n\n':'')+
+    '¿Me pueden enviar una propuesta?';
 }
 function copyProposal(){navigator.clipboard.writeText(proposal()).then(()=>toast('Propuesta copiada. Pégala en WhatsApp o en un correo.'))}
 
 function saveAudit(b,r){
+  const prev=store.get().find(x=>x.name===b.name);
   const list=store.get().filter(x=>x.name!==b.name);
-  list.unshift({name:b.name,cat:b.cat,zone:b.zone,score:r.score,crit:r.crit.length,date:Date.now(),contacted:false,data:b});
+  list.unshift({name:b.name,cat:b.cat,zone:b.zone,score:r.score,crit:r.crit.length,date:Date.now(),contacted:!!(prev&&prev.contacted),data:b});
   store.set(list.slice(0,50));
 }
 function markContacted(){
   const list=store.get(); const it=list.find(x=>x.name===current.b.name); if(!it)return;
-  it.contacted=!it.contacted; store.set(list);
-  document.getElementById('markBtn').textContent=it.contacted?'Contactado ✓':'Marcar como contactado';
-  toast(it.contacted?'Marcado como contactado.':'Vuelve a estar pendiente.');
+  it.contacted=true; store.set(list);
+  toast('Abrimos WhatsApp con tu reporte. Te respondemos pronto.');
 }
 function renderHist(){
   const list=store.get(), el=document.getElementById('histTable');
-  if(!list.length){el.innerHTML='<div class="empty">Todavía no auditas ningún negocio. Busca uno en <b>Auditar</b>.</div>';return}
+  if(!list.length){el.innerHTML='<div class="empty">Todavía no revisas ningún negocio. Busca el tuyo en <b>Revisar</b>.</div>';return}
   el.innerHTML='<div class="trow"><span>Puntaje</span><span>Negocio</span><span class="hide">Urgentes</span><span class="hide">Estado</span><span></span></div>'+
     list.map((x,i)=>`<div class="trow"><span class="badge" style="color:${x.score>=75?'var(--ok)':x.score>=50?'var(--warn)':'var(--crit)'}">${x.score}</span>
       <span><span class="n">${x.name}</span><small>${x.cat} · ${x.zone} · ${new Date(x.date).toLocaleDateString('es-EC')}</small></span>
-      <span class="hide">${x.crit} urgentes</span><span class="hide status ${x.contacted?'k':'p'}">${x.contacted?'Contactado':'Pendiente'}</span>
+      <span class="hide">${x.crit} urgentes</span><span class="hide status ${x.contacted?'k':'p'}">${x.contacted?'Ayuda pedida':'Sin pedir ayuda'}</span>
       <button class="btn ghost sm" onclick="reopen(${i})">Ver reporte</button></div>`).join('');
 }
 function reopen(i){const x=store.get()[i];renderReport(x.data)}
